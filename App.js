@@ -12,7 +12,7 @@ function App() {
     setCount(count + 1);
   }
   return (
-    <GameButton></GameButton>
+    <GameButton>  </GameButton>
   )
   /*  return (
      <div className="App">
