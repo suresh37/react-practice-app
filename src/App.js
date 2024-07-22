@@ -3,6 +3,7 @@ import './App.css';
 import { useState } from 'react';
 import MyBtn from './components/MyBtn';
 import GameButton from './components/GameButton';
+import './styles.css';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -15,7 +16,9 @@ function App() {
     setCount(0);
   }
   return (
-    <GameButton></GameButton>
+    <div className="App">
+      <GameButton></GameButton>
+    </div>
   )
   /*  return (
      <div className="App">
