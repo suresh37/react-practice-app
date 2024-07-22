@@ -7,8 +7,11 @@ function App() {
   const [count, setCount] = useState(0);
 
   function handleClick() {
-    console.log('button clicked', count)
+    console.log('button clicked ::', count)
     setCount(count + 1);
+  }
+  function reset(){
+    setCount(0);
   }
   return (
     <div className="App">
@@ -17,6 +20,8 @@ function App() {
         <MyBtn count={count} onClick={handleClick}></MyBtn>
         <br></br>
         <MyBtn count={count} onClick={handleClick}></MyBtn>
+        <br></br>
+        <button onClick={reset}>Reset</button>
       </div>
     </div >
   );
