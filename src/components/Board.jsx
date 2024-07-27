@@ -56,6 +56,7 @@ const GameButton = () => {
 
 	return (
 		<>
+		        <p>Tic Tac Toe</p>
 			<p>Next Player: {symbol}</p>
 			<p>{status != null ? status : ''}</p>
 			<div className='board'>
