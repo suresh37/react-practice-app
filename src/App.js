@@ -4,6 +4,8 @@ import { useState } from 'react';
 import MyBtn from './components/MyBtn';
 import Board from './components/Board';
 import './styles.css';
+import Gallery from './components/Gallery';
+import Weather from './components/Weather';
 
 function BtnCounter() {
   const [count, setCount] = useState(0);
@@ -24,12 +26,19 @@ function BtnCounter() {
 function App() {
 
   return (
-    <div className="App">
-      <div style={{}} >
-        <BtnCounter />
-        <Board />
-      </div>
-    </div >
+    <div>
+      <Weather />
+    </div>
+    /*  <div>
+       <Gallery />
+     </div> */
+
+    /* <div className="App">
+        <div style={{}} >
+          <BtnCounter />
+          <Board />
+        </div>
+      </div > */
   );
 }
 
