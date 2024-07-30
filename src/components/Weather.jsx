@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+let weatherService = require('../services/weather-service');
 
 const Weather = () => {
 	const [weatherData, setWeatherData] = useState({ temp: '35' });
@@ -12,11 +13,16 @@ const Weather = () => {
 				setLat(position.coords.latitude.toFixed(6));
 				setLong(position.coords.longitude.toFixed(6));
 				console.log(`Latitude: ${lat}, Longitude: ${long}`);
+				getRevGeoCode();
 			});
 		} else {
 			console.log('Geolocation is not supported');
 		}
-	}, []);
+	});
+	const getRevGeoCode = async () => {
+		let revGeoCodeData = weatherService.getReverseGeoCoding(lat, long);
+		console.log('revGeoCodeData', revGeoCodeData);
+	};
 
 	const handleInputChange = () => {
 		if (!lat || !long) return;
