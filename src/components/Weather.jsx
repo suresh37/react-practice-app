@@ -21,14 +21,19 @@ const Weather = () => {
 
 	useEffect(() => {
 		console.log(`useEffect 2 :: Latitude: ${lat}, Longitude: ${long}`);
-		if (lat && long) {
-			getRevGeoCode();
-			getWeatherData();
-		}
+		(async () => {
+			if (lat && long) {
+				await getRevGeoCode();
+				await getWeatherData();
+			}
+		})();
 	}, [lat, long]);
 
 	const getRevGeoCode = async () => {
-		let revGeoCodeDataTemp = await weatherService.getReverseGeoCoding(lat, long);
+		let revGeoCodeDataTemp = await weatherService.getReverseGeoCoding(
+			lat,
+			long,
+		);
 		console.log('revGeoCodeDataTemp', revGeoCodeDataTemp);
 		setRevGeoCodeData(revGeoCodeDataTemp);
 	};
@@ -41,12 +46,11 @@ const Weather = () => {
 
 	const handleInputChange = (name, event) => {
 		//if (!lat || !long) return;
-		console.log(event)
+		console.log(event);
 		console.log('Input changed', lat, long);
 		if (name == 'lat') {
 			setLat(event.target.value);
-		}
-		else if (name == 'long') {
+		} else if (name == 'long') {
 			setLong(event.target.value);
 		}
 	};
