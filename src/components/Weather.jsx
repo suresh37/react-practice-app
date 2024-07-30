@@ -11,7 +11,7 @@ const Weather = () => {
 			navigator.geolocation.getCurrentPosition(function (position) {
 				setLat(position.coords.latitude.toFixed(6));
 				setLong(position.coords.longitude.toFixed(6));
-				console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+				console.log(`Latitude: ${lat}, Longitude: ${long}`);
 			});
 		} else {
 			console.log('Geolocation is not supported');
@@ -19,7 +19,8 @@ const Weather = () => {
 	}, []);
 
 	const handleInputChange = () => {
-		console.log('Input changed');
+		if (!lat || !long) return;
+		console.log('Input changed', lat, long);
 	};
 	return (
 		<div>
