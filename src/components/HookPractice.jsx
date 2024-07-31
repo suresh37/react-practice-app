@@ -6,8 +6,13 @@ const HookPractice = () => {
     const [name, setName] = useState('Dog');
     const [color, setColor] = useState('White');
 
-    const selectHandler = useCallback(() => {
-        console.log('selectHandler');
+    const nameHandler = () => {
+        console.log('nameHandler');
+        setName(name == 'Dog' ? 'Cat' : 'Dog');
+    }
+
+    const colorHandler = useCallback(() => {
+        console.log('colorHandler');
         setColor(color == 'White' ? 'Black' : 'White');
     }, [color])
 
@@ -18,7 +23,7 @@ const HookPractice = () => {
             <br />
             <br /><br />
             <hr />
-            <Animal name={name} color={color} selectHandler={selectHandler} />
+            <Animal name={name} color={color} nameHandler={nameHandler} colorHandler={colorHandler} />
         </div>
     )
 }
