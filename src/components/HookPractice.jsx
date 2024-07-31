@@ -8,7 +8,7 @@ const HookPractice = () => {
 
     const selectHandler = useCallback(() => {
         console.log('selectHandler');
-        setName('Black');
+        setColor(color == 'White' ? 'Black' : 'White');
     }, [color])
 
     return (
