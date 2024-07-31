@@ -6,6 +6,7 @@ import Board from './components/Board';
 import './styles.css';
 import Gallery from './components/Gallery';
 import Weather from './components/Weather';
+import HookPractice from './components/HookPractice';
 
 function BtnCounter() {
   const [count, setCount] = useState(0);
@@ -27,7 +28,8 @@ function App() {
 
   return (
     <div>
-      <Weather />
+      {/* <Weather /> */}
+      <HookPractice />
     </div>
     /*  <div>
        <Gallery />
