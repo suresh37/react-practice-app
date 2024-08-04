@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import MyBtn from './components/MyBtn';
 import Board from './components/Board';
 import './styles.css';
@@ -26,10 +26,12 @@ function BtnCounter() {
 
 function App() {
 
+
   return (
     <div>
       {/* <Weather /> */}
       <HookPractice />
+
     </div>
     /*  <div>
        <Gallery />
