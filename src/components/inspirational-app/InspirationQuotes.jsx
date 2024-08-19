@@ -12,15 +12,15 @@ const InspirationQuotes = ({ show, children }) => {
 					title
 					text='Inspiration App'
 				/>
-				<FancyText
-					show={true}
-					text={quote}
-				/>
 				<button
 					onClick={() => setIndex(Math.floor(Math.random() * 10))}
 				>
 					Randomize
 				</button>
+				<FancyText
+					show={true}
+					text={quote}
+				/>
 				{children}
 				<hr />
 			</>
