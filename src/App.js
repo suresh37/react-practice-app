@@ -7,6 +7,7 @@ import './styles.css';
 import Gallery from './components/Gallery';
 import Weather from './components/Weather';
 import HookPractice from './components/HookPractice';
+import PureComp from './components/PureComp';
 
 function BtnCounter() {
   const [count, setCount] = useState(0);
@@ -31,6 +32,7 @@ function App() {
     <div>
       {/* <Weather /> */}
       <HookPractice />
+      <PureComp/>
 
     </div>
     /*  <div>
