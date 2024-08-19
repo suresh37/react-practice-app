@@ -15,11 +15,15 @@ const PureComp = () => {
 	return (
 		<div>
 			{(() => {
-                const guests = [];
-                for(let n of nums){
-                    guests.push(<Guest num ={n}></Guest>);
-                }
-                return guests;
+				const guests = [];
+				for (let n of nums) {
+					guests.push(<Guest num={n}></Guest>);
+				}
+				return guests;
+			})()}
+            <br/>
+			{(() => {
+				return [7,9].map((n) => <Guest num={n}></Guest>);
 			})()}
 			{/* <Guest num={1} />
 			<Guest num={2} />
