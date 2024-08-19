@@ -27,6 +27,7 @@ const PureComp = () => {
 			{/* <Guest num={1} />
 			<Guest num={2} />
 			<Guest num={3} /> */}
+			<hr/>
 		</div>
 	);
 };
