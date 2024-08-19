@@ -41,7 +41,9 @@ function App() {
 	return (
 		<>
 			{/* <div className='App'>
-		<div style={{}}> */}
+		    <div style={{}}> */}
+			{/*----------------------------------------*/}
+
 			{/* From Tutorial */}
 			<BtnCounter show={false} />
 			<Gallery show={false} />
@@ -56,10 +58,11 @@ function App() {
 			{/* Iterating List */}
 			<PureComp show={false} />
 			{/* UI Render Tree */}
-			<InspirationQuotes show={false}>
+			<InspirationQuotes show={true}>
 				<Copyright year={2024} />
 			</InspirationQuotes>
 
+			{/*----------------------------------------*/}
 			{/* </div>
 			</div> */}
 		</>
