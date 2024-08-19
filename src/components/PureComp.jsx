@@ -12,6 +12,7 @@ const Guest = ({ num }) => {
 
 const PureComp = () => {
 	let nums = [1, 2, 3];
+    let guestsNew = [7,9].map((n) => <Guest num={n}></Guest>);
 	return (
 		<div>
 			{(() => {
@@ -22,9 +23,7 @@ const PureComp = () => {
 				return guests;
 			})()}
             <br/>
-			{(() => {
-				return [7,9].map((n) => <Guest num={n}></Guest>);
-			})()}
+			{guestsNew}
 			{/* <Guest num={1} />
 			<Guest num={2} />
 			<Guest num={3} /> */}
