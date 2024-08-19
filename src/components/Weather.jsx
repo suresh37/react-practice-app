@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 let weatherService = require('../services/weather-service');
 
-const Weather = () => {
+const Weather = ({ show }) => {
 	const [weatherData, setWeatherData] = useState({ temp: '-' });
 	const [revGeoCodeData, setRevGeoCodeData] = useState(null);
 	const [lat, setLat] = useState(0);
@@ -54,31 +54,32 @@ const Weather = () => {
 			setLong(event.target.value);
 		}
 	};
-	return (
-		<div>
-			<p style={{ textAlign: 'center' }}>
-				<b>Weathering With U</b>
-			</p>
-			<p>Location : {revGeoCodeData?.address?.city}</p>
-			<p>Current Weather : {weatherData?.currently?.summary}</p>
-			<br />
+	return show ?
 			<div>
-				<b>Latitude: </b>
-				<input
-					value={lat}
-					onChange={(e) => handleInputChange('lat', e)}
-				></input>
+				<p style={{ textAlign: 'center' }}>
+					<b>Weathering With U</b>
+				</p>
+				<p>Location : {revGeoCodeData?.address?.city}</p>
+				<p>Current Weather : {weatherData?.currently?.summary}</p>
 				<br />
-				<br />
-				<b>Longitude: </b>
-				<input
-					value={long}
-					onChange={(e) => handleInputChange('long', e)}
-				></input>
-				<br />
+				<div>
+					<b>Latitude: </b>
+					<input
+						value={lat}
+						onChange={(e) => handleInputChange('lat', e)}
+					></input>
+					<br />
+					<br />
+					<b>Longitude: </b>
+					<input
+						value={long}
+						onChange={(e) => handleInputChange('long', e)}
+					></input>
+					<br />
+				</div>
+				<hr />
 			</div>
-		</div>
-	);
+		:	'';
 };
 
 export default Weather;

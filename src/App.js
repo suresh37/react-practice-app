@@ -12,7 +12,7 @@ import InspirationQuotes from './components/inspirational-app/InspirationQuotes'
 import Copyright from './components/inspirational-app/Copyright';
 import FancyText from './components/inspirational-app/FancyText';
 
-function BtnCounter() {
+function BtnCounter({ show }) {
 	const [count, setCount] = useState(0);
 	function handleClick() {
 		console.log('button clicked ::', count);
@@ -21,47 +21,48 @@ function BtnCounter() {
 	function reset() {
 		setCount(0);
 	}
-	return (
-		<div>
-			<p>{count}</p>
-			<MyBtn
-				count={count}
-				onClick={handleClick}
-			></MyBtn>
-			<MyBtn
-				count={count}
-				onClick={handleClick}
-			></MyBtn>
-			<button onClick={reset}>Reset Count</button>
-		</div>
-	);
+	return show ?
+			<div>
+				<p>{count}</p>
+				<MyBtn
+					count={count}
+					onClick={handleClick}
+				></MyBtn>
+				<MyBtn
+					count={count}
+					onClick={handleClick}
+				></MyBtn>
+				<button onClick={reset}>Reset Count</button>
+			</div>
+		:	'';
 }
 
 function App() {
 	return (
-		<div>
-			{/* <Weather /> */}
-			<HookPractice />
-			<PureComp />
+		<>
+			{/* <div className='App'>
+		<div style={{}}> */}
+			{/* From Tutorial */}
+			<BtnCounter show={false} />
+			<Gallery show={false} />
+			<Board show={false} />
 
-			<FancyText
-				title
-				text='Inspiration App'
-			/>
-			<InspirationQuotes>
+			{/* API Calls Integration */}
+			<Weather show={false} />
+
+			{/* Usecallback, UseEffect */}
+			<HookPractice show={false} />
+
+			{/* Iterating List */}
+			<PureComp show={false} />
+			{/* UI Render Tree */}
+			<InspirationQuotes show={false}>
 				<Copyright year={2024} />
 			</InspirationQuotes>
-		</div>
-		/*  <div>
-       <Gallery />
-     </div> */
 
-		/* <div className="App">
-        <div style={{}} >
-          <BtnCounter />
-          <Board />
-        </div>
-      </div > */
+			{/* </div>
+			</div> */}
+		</>
 	);
 }
 

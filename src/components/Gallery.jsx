@@ -13,15 +13,18 @@ const Profile = () => {
 	);
 };
 
-const Gallery = () => {
-	return (
-		<section>
-			<h1>Profiles</h1>
-			<Profile />
-			<Profile />
-			<Profile />
-		</section>
-	);
+const Gallery = ({ show }) => {
+	return show ?
+			<>
+				<section>
+					<h1>Profiles</h1>
+					<Profile />
+					<Profile />
+					<Profile />
+				</section>
+				<hr />
+			</>
+		:	'';
 };
 
 export default Gallery;
