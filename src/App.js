@@ -11,6 +11,7 @@ import PureComp from './components/PureComp';
 import InspirationQuotes from './components/inspirational-app/InspirationQuotes';
 import Copyright from './components/inspirational-app/Copyright';
 import FancyText from './components/inspirational-app/FancyText';
+import Carousel from './components/interactivity/Carousel';
 
 function BtnCounter({ show }) {
   const [count, setCount] = useState(0);
@@ -50,7 +51,7 @@ function App() {
       <Board show={false} />
 
       {/* API Calls Integration */}
-      <Weather show={false} />
+      {/*  <Weather show={false} /> */}
 
       {/* Usecallback, UseEffect */}
       <HookPractice show={false} />
@@ -61,6 +62,8 @@ function App() {
       <InspirationQuotes show={true}>
         <Copyright year={2024} />
       </InspirationQuotes>
+
+      <Carousel show={true} />
 
       {/*----------------------------------------*/}
       {/* </div>
