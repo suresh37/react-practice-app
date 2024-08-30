@@ -12,6 +12,7 @@ import InspirationQuotes from './components/inspirational-app/InspirationQuotes'
 import Copyright from './components/inspirational-app/Copyright';
 import FancyText from './components/inspirational-app/FancyText';
 import Carousel from './components/interactivity/Carousel';
+import Interactivity from './components/interactivity/Interactivity';
 
 function BtnCounter({ show }) {
   const [count, setCount] = useState(0);
@@ -59,11 +60,13 @@ function App() {
       {/* Iterating List */}
       <PureComp show={false} />
       {/* UI Render Tree */}
-      <InspirationQuotes show={true}>
+      <InspirationQuotes show={false}>
         <Copyright year={2024} />
       </InspirationQuotes>
 
-      <Carousel show={true} />
+      <Carousel show={false} />
+
+      <Interactivity show={true} />
 
       {/*----------------------------------------*/}
       {/* </div>
