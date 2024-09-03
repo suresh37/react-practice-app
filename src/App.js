@@ -13,6 +13,7 @@ import Copyright from './components/inspirational-app/Copyright';
 import FancyText from './components/inspirational-app/FancyText';
 import Carousel from './components/interactivity/Carousel';
 import Interactivity from './components/interactivity/Interactivity';
+import ManageState from './components/interactivity/ManageState';
 
 function BtnCounter({ show }) {
   const [count, setCount] = useState(0);
@@ -66,7 +67,9 @@ function App() {
 
       <Carousel show={false} />
 
-      <Interactivity show={true} />
+      <Interactivity show={false} />
+
+      <ManageState show={true} />
 
       {/*----------------------------------------*/}
       {/* </div>
