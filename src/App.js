@@ -14,6 +14,7 @@ import FancyText from './components/inspirational-app/FancyText';
 import Carousel from './components/interactivity/Carousel';
 import Interactivity from './components/interactivity/Interactivity';
 import ManageState from './components/interactivity/ManageState';
+import HooksComp from './components/hooks/HooksComp';
 
 function BtnCounter({ show }) {
   const [count, setCount] = useState(0);
@@ -69,7 +70,9 @@ function App() {
 
       <Interactivity show={false} />
 
-      <ManageState show={true} />
+      <ManageState show={false} />
+
+      <HooksComp show={true} />
 
       {/*----------------------------------------*/}
       {/* </div>
